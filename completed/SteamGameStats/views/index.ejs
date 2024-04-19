@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Game Updates</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+</head>
+
+<body>
+  <h1 class="text-center">First News Up</h1>
+  <h2 class="text-center">Insert the app ID of your favorite game to get the most up to date news!</h2>
+  <br>
+  <div class="d-flex justify-content-center">
+    <form action="/submit" method="POST" class="d-flex justify-content-center">
+    <input type="text" name="testingID" placeholder="Insert App ID">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+  <br>
+ <% if(locals.title) {%>
+  <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column justify-content-center align-items-center align-content-center" style="width: 25rem;">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/020/975/559/small_2x/steam-logo-steam-icon-transparent-free-png.png" id="symbol" class="card-img-top img-thumbnail" alt="...">
+      <div class="card-body">
+        <h5 class="card-title text-center"><%= title%></h5>
+        <p class="card-text text-center"><%- content%></p>
+        <a href="<%= url%>" class="btn btn-primary d-flex justify-content-center">Visit Article</a>
+      </div>
+    </div>
+  </div>
+  <%}%>
+</body>
+
+</html>
